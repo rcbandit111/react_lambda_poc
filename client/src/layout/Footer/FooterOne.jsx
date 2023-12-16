@@ -60,6 +60,7 @@ const FooterOne = ({ footerLight, style, footerGradient }) => {
   return (
     <>
       {contextHolder}
+      CONTROLLED FORM
       <Form onFinish={handleFormSubmit} className="form" form={form}>
         <Form.Item
           name={"email"}
@@ -75,10 +76,11 @@ const FooterOne = ({ footerLight, style, footerGradient }) => {
           <Input />
         </Form.Item>
         <Button type="primary" htmlType="submit">
-          Submit
+          Subscribe
         </Button>
       </Form>
-      {/* <form
+      OLD FORM
+      <form
         className="newsletter-form position-relative d-block d-lg-flex d-md-flex"
         onSubmit={handleSubmit}
       >
@@ -90,16 +92,13 @@ const FooterOne = ({ footerLight, style, footerGradient }) => {
           required={true}
           autoComplete="off"
         />
-        <button className="btn btn-primary mt-3 mt-lg-0 mt-md-0" type="submit">
-          Submit
-        </button>
         <input
           type="submit"
           value="Subscribe"
           data-wait="Please wait..."
           className="btn btn-primary mt-3 mt-lg-0 mt-md-0"
         />
-      </form> */}
+      </form>
     </>
   );
 };
