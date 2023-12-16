@@ -1,9 +1,11 @@
-import React from 'react'
-import Routers from './routers'
+import React from "react";
+import Routers from "./routers";
+
+import "./global.css";
 
 // Swiper CSS
 import "swiper/css";
-import 'swiper/css/navigation';
+import "swiper/css/navigation";
 
 //bootstrap
 import "bootstrap/dist/js/bootstrap.bundle";
@@ -16,7 +18,7 @@ function App() {
     <>
       <Routers />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
