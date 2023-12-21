@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="process.MapTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-12-21T16:42:45" hostname="DESKTOP-BKOOSAD" time="0.229">
+<testsuite name="process.MapTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-12-21T18:24:51" hostname="DESKTOP-BKOOSAD" time="0.014">
   <properties/>
-  <testcase name="test()" classname="process.MapTests" time="0.229"/>
+  <testcase name="test()" classname="process.MapTests" time="0.014"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
