@@ -4,6 +4,7 @@ import java.util.function.Function;
 
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -33,7 +34,12 @@ public class FunctionConfiguration {
 	}
 
 	@RequestMapping("/")
-	public @ResponseBody String process(@RequestBody Request request) {
-		return "Hello, World " + request.getEmail();
+	public ResponseEntity<?> process(@RequestBody Request request)
+	{
+		// Do some processing
+
+		String email = request.getEmail();
+
+		return ResponseEntity.ok().build();
 	}
 }
