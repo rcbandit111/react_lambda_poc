@@ -9,8 +9,8 @@ const FooterOne = ({ footerLight, style, footerGradient }) => {
   const AWS = require('aws-sdk');
 
   AWS.config.update({
-    accessKeyId: "YOURKEY",
-    secretAccessKey: "YOURSECRET"
+    accessKeyId: "AKIAV27JTJZAHWU6N67I",
+    secretAccessKey: "Ukc3mHry9D0Pemc8zIW5phUilGJ/Gr8+7L/SfVox"
   });
 
 
