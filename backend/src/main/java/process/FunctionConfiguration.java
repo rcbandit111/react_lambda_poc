@@ -1,12 +1,8 @@
 package process;
 
-import java.util.function.Function;
-
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.Bean;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import process.dto.Request;
 
 @SpringBootApplication
 public class FunctionConfiguration {
@@ -20,20 +16,10 @@ public class FunctionConfiguration {
 		// SpringApplication.run(FunctionConfiguration.class, args);
 	}
 
-	@Bean
-	public Function<String, String> uppercase() {
-		return value -> {
-			if (value.equals("exception")) {
-				throw new RuntimeException("Intentional exception");
-			}
-			else {
-				return value.toUpperCase();
-			}
-		};
-	}
+	public String process(@RequestBody Request request)
+	{
+		// Do some processing. Return HTTP 200 if OK or return custom error code 500 with error message
 
-	@RequestMapping("/")
-	public @ResponseBody String process(@RequestBody Request request) {
 		return "Hello, World " + request.getEmail();
 	}
 }
