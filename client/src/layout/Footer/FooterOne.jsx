@@ -8,14 +8,16 @@ const FooterOne = ({ footerLight, style, footerGradient }) => {
   const handleFormSubmit = async (formValues) => {
     const { email } = formValues;
 
+    const body = {
+      email,
+    };
+
     try {
       const result = await fetch(
         "https://s7mvanfyy7726dco5yzt3emmsq0zeswn.lambda-url.us-east-1.on.aws/",
         {
           method: "POST",
-          body: {
-            email: email,
-          },
+          body: JSON.stringify(body),
         }
       );
 
