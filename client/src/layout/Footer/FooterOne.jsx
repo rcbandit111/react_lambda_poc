@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import { Button, Form, Input, notification } from "antd";
 
 const FooterOne = ({ footerLight, style, footerGradient }) => {
   const [api, contextHolder] = notification.useNotification();
   const [form] = Form.useForm();
+
+  const [response, setResponse] = useState("");
 
   const handleFormSubmit = async (formValues) => {
     const { email } = formValues;
@@ -14,14 +16,16 @@ const FooterOne = ({ footerLight, style, footerGradient }) => {
 
     try {
       const result = await fetch(
-        "https://s7mvanfyy7726dco5yzt3emmsq0zeswn.lambda-url.us-east-1.on.aws/",
+        `https://s7mvanfyy7726dco5yzt3emmsq0zeswn.lambda-url.us-east-1.on.aws/}`,
         {
           method: "POST",
           body: JSON.stringify(body),
         }
       );
 
-      console.log(result);
+      const response = await result.text();
+
+      setResponse(response);
 
       api.success({ message: "Form was submited successfully" });
       form.resetFields();
@@ -52,6 +56,13 @@ const FooterOne = ({ footerLight, style, footerGradient }) => {
           Subscribe
         </Button>
       </Form>
+
+      {response && (
+        <>
+          <p>Lambda Response</p>
+          <h1>{response}</h1>
+        </>
+      )}
     </>
   );
 };
