@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="process.MapTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-12-24T00:46:56" hostname="DESKTOP-BKOOSAD" time="0.018">
-  <properties/>
-  <testcase name="test()" classname="process.MapTests" time="0.018"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>

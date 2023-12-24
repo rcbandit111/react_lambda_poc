@@ -2,5 +2,6 @@ process\dto\RequestContext.class
 process\dto\Root.class
 process\dto\Http.class
 process\FunctionConfiguration.class
+util\Logger.class
 process\dto\Application.class
 process\dto\Headers.class
