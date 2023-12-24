@@ -6,7 +6,7 @@
 
 	<groupId>io.spring.sample</groupId>
 	<artifactId>function-sample-aws</artifactId>
-	<version>0.0.1-SNAPSHOT</version><!-- @releaser:version-check-off -->
+	<version>0.0.1</version><!-- @releaser:version-check-off -->
 	<packaging>jar</packaging>
 
 	<name>function-sample-aws</name>
@@ -42,6 +42,11 @@
 			<artifactId>aws-lambda-java-core</artifactId>
 			<version>1.1.0</version>
 			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>2.15.0</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>

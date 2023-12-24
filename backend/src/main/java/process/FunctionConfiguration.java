@@ -1,8 +1,10 @@
 package process;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.web.bind.annotation.RequestBody;
-import process.dto.Request;
+import process.dto.Application;
+import process.dto.Root;
 
 @SpringBootApplication
 public class FunctionConfiguration {
@@ -16,10 +18,14 @@ public class FunctionConfiguration {
 		// SpringApplication.run(FunctionConfiguration.class, args);
 	}
 
-	public String process(@RequestBody Request request)
+	public String process(Application request) throws JsonProcessingException
 	{
 		// Do some processing. Return HTTP 200 if OK or return custom error code 500 with error message
 
-		return "Hello, World " + request.getEmail();
+		ObjectMapper om = new ObjectMapper();
+
+		Root root = om.readValue(request.getBody(), Root.class);
+
+        return "Hello, World " + root.getEmail();
 	}
 }
