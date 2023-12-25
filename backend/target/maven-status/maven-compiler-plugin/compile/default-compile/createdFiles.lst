@@ -1,5 +1,5 @@
 process\dto\RequestContext.class
-process\dto\Root.class
+process\dto\Message.class
 process\dto\Http.class
 process\FunctionConfiguration.class
 util\Logger.class

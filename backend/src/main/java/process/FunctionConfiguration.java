@@ -1,9 +1,10 @@
 package process;
 
+import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import okhttp3.*;
 import process.dto.Application;
-import process.dto.Root;
+import process.dto.Message;
 
 import java.io.IOException;
 
@@ -12,13 +13,15 @@ public class FunctionConfiguration {
     public String process(Application request) throws IOException {
         // Do some processing. Return HTTP 200 if OK or return custom error code 500 with error message
 
-        ObjectMapper om = new ObjectMapper();
+        ObjectMapper om = new ObjectMapper().configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
 
-        Root root = om.readValue(request.getBody(), Root.class);
+        Message message = om.readValue(request.getBody(), Message.class);
+
+        // TODO process values here
 
         test();
 
-        return "Hello, World " + root.getEmail();
+        return message.getEmail();
     }
 
 
